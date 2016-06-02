@@ -38,3 +38,5 @@ if sc.rtm_connect():
                 for phrase in phrases:
                     if phrase.original.search(message):
                         sc.rtm_send_message(channel, phrase.response)
+
+        time.sleep(1)
