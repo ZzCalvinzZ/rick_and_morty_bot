@@ -21,10 +21,12 @@ phrases = (
 if sc.rtm_connect():
     while True:
         event = sc.rtm_read()
-        for item in event:
-            message = item.get('text', None)
 
-            if message:
+        for item in event:
+            if item.get('type', None) == 'message':
+                message = item.get('text', '')
+                channel = item.get('channel', '')
+
                 for phrase in phrases:
                     if phrase.original.search(message):
-                        print phrase.response
+                        sc.rtm_send_message(channel, phrase.response)
