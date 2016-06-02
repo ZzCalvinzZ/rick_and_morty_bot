@@ -15,6 +15,14 @@ sc = SlackClient(token)
 text = namedtuple('phrase', 'original response')
 phrases = (
     text(original=re.compile("(what is|what's) my purpose", flags=re.IGNORECASE), response="You pass butter."),
+    text(original=re.compile("schwifty", flags=re.IGNORECASE), response="Ohh yea, you gotta get schwifty in here."),
+    text(original=re.compile("think (you're|you are|your) better than me", flags=re.IGNORECASE), response="Keep Summer safe."),
+    text(original=re.compile("what'?s going on", flags=re.IGNORECASE), response="I have brokered a peace agreement between the giant spiders and the government."),
+    text(original=re.compile("ride the stairs", flags=re.IGNORECASE), response="I can take you down there for 25 Schmeck-les"),
+    text(original=re.compile("I don'?t (wanna|want to) shoot (nobody|anybody|noone|anyone)", flags=re.IGNORECASE), response="It's ok, they're just robots Morty, it's ok to shoot them, they're robots!"),
+    text(original=re.compile("(they're|there|their) not robots", flags=re.IGNORECASE), response="It's a figure of speech Morty, they're bureaucrats, I don't respect them. Just keep shooting Morty."),
+    text(original=re.compile("human music", flags=re.IGNORECASE), response="Human music...I like it."),
+    text(original=re.compile("(like to|can I) order", flags=re.IGNORECASE), response="I'd like to order one large phone with extra phones please. cell phone, no no no rotary... and payphone on half."),
 )
 
 #connect to slack and do stuff
