@@ -1,9 +1,14 @@
+import os
 import re
 import yaml
+import time
+
 from collections import namedtuple
 
 #get slack token from yaml file
-with open('token.yaml', 'r') as stream:
+current_path = os.path.dirname(os.path.realpath(__file__))
+
+with open(current_path + '/token.yaml', 'r') as stream:
     token = yaml.load(stream)['token']
 
 from slackclient import SlackClient
