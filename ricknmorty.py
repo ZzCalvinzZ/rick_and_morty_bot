@@ -36,7 +36,7 @@ if sc.rtm_connect():
         event = sc.rtm_read()
 
         for item in event:
-            if item.get('type', None) == 'message':
+            if item.get('type', None) == 'message' and item.get('user', None) != 'rick_and_morty_bot':
                 message = item.get('text', '')
                 channel = item.get('channel', '')
 
