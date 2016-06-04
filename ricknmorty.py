@@ -41,10 +41,10 @@ def decide_on_response(message):
     """
     for phrase in phrases:
         if phrase.original.search(message):
-            if isinstance(response, tuple):
-                return (random.choice(response))
+            if isinstance(phrase.response, tuple):
+                return (random.choice(phrase.response))
             else:
-                return response
+                return phrase.response
 
 #connect to slack and do stuff
 if __name__ == "__main__":
