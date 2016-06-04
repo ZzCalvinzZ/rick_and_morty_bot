@@ -35,24 +35,16 @@ phrases = (
     text(original=re.compile("(near me|around me|personal space|too close)", flags=re.IGNORECASE), response=PERSONAL_SPACE),
 )
 
-def respond(response):
-    if isinstance(response, tuple):
-        return (random.choice(response))
-    else:
-        return response
-
-def decide_on_response(event):
+def decide_on_response(message):
     """
     pass in the slack event and get back a response that can then be posted
     """
-    for item in event:
-        if item.get('type', None) == 'message' and item.get('user', None) != 'rick_and_morty_bot':
-            message = item.get('text', '')
-            channel = item.get('channel', '')
-
-            for phrase in phrases:
-                if phrase.original.search(message):
-                    return respond(phrase.response)
+    for phrase in phrases:
+        if phrase.original.search(message):
+            if isinstance(response, tuple):
+                return (random.choice(response))
+            else:
+                return response
 
 #connect to slack and do stuff
 if __name__ == "__main__":
@@ -71,7 +63,13 @@ if __name__ == "__main__":
         while True:
             event = sc.rtm_read()
 
-            response = decide_on_response(event)
-            sc.rtm_send_message(channel, response)
+            for item in event:
+
+                if item.get('type', None) == 'message' and item.get('user', None) != 'rick_and_morty_bot':
+                    message = item.get('text', '')
+                    channel = item.get('channel', '')
+
+                    response = decide_on_response(message)
+                    sc.rtm_send_message(channel, response)
 
             time.sleep(1)
