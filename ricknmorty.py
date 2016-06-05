@@ -53,6 +53,12 @@ TWO_BROTHERS = (
 	"They have a strong bond, but you don't wanna know about it here. But I'll tell you one thing...the moon, it comes crashing into earth. What do ya do then.",
 )
 
+BABY_LEGS = (
+	"This is upsetting to me because I don't feel like I need no regular leg partner.",
+	"Baby legs, don't talk back to me. Good luck you two, there's a criminal to kill.",
+	"I'm comin' baby legs...I'm..regular..legs!",
+)
+
 phrases = (
 	text(original=re.compile("(what is|what's) my purpose", flags=re.IGNORECASE), response="You pass butter."),
 	text(original=re.compile("schwifty", flags=re.IGNORECASE), response="Ohh yea, you gotta get schwifty in here."),
@@ -68,6 +74,7 @@ phrases = (
 	text(original=re.compile("(can'?t see|blind|in my eyes)", flags=re.IGNORECASE), response=ANTS_IN_MY_EYES),
 	text(original=re.compile("(real|fake) doors?", flags=re.IGNORECASE), response=FAKE_DOORS),
 	text(original=re.compile("(two brothers|in a van|mexican armada|cat monsters|twel.?th gear)", flags=re.IGNORECASE), response=TWO_BROTHERS),
+	text(original=re.compile("(baby|regular|small|short|weird) legs", flags=re.IGNORECASE), response=BABY_LEGS),
 )
 
 def decide_on_response(message):
