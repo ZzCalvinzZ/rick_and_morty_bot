@@ -51,7 +51,7 @@ TWO_BROTHERS = (
 	"ALIEN INVASION TOMATOE MONSTER MEXICAN ARMADA BROTHERS (WHO ARE JUST REGULAR BROTHERS) RUNNING IN A VAN FROM AN ASTEROID AND ALL SORTS OF THINGS THE MOVIE",
 	"Old women are comin', and they're also in the movie, and they're gonna come and cross...attack...the two brothers",
 	"They have a strong bond, but you don't wanna know about it here. But I'll tell you one thing...the moon, it comes crashing into earth. What do ya do then.",
-	)
+)
 
 phrases = (
 	text(original=re.compile("(what is|what's) my purpose", flags=re.IGNORECASE), response="You pass butter."),
