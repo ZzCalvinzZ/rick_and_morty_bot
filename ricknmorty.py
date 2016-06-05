@@ -40,6 +40,7 @@ FAKE_DOORS = (
 	"Not this one, not this one. None of em open!",
 	"www.fakedoors.com is our website. Check it out for a lot of really great deals on FAKE DOOORRRRSSSS!",
 	"Hey everybody, so this is my house, just made a sandwich. Still here, still sellin' fake doors.",
+	"We have fake doors, like you wouldn't believe. Don't even hesitate, don't even worry, don't even give it a second thought.",
 	)
 
 phrases = (
