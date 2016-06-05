@@ -33,6 +33,13 @@ ANTS_IN_MY_EYES = (
 	"There are so many TVs, Microwaves, Radios...I think...I'm not a hundred percent sure what we have in stock, because there are so many ants in my eyes!",
 	"I can't see anything! Our prices, I hope aren't too low!",
 	"Also I can't feel anything either, but that's not as catchy.",
+)
+
+FAKE_DOORS = (
+	"Check this out! Mm, won't open, Mm, won't open",
+	"Not this one, not this one. None of em open!",
+	"www.fakedoors.com is our website. Check it out for a lot of really great deals on FAKE DOOORRRRSSSS!",
+	"Hey everybody, so this is my house, just made a sandwich. Still here, still sellin' fake doors.",
 	)
 
 phrases = (
@@ -48,6 +55,7 @@ phrases = (
 	text(original=re.compile("(dunce|dance|dense)days", flags=re.IGNORECASE), response=GAZORPAZORP),
 	text(original=re.compile("(near me|around me|personal space|too close)", flags=re.IGNORECASE), response=PERSONAL_SPACE),
 	text(original=re.compile("(can'?t see|blind|in my eyes)", flags=re.IGNORECASE), response=ANTS_IN_MY_EYES),
+	text(original=re.compile("(real|fake) doors?", flags=re.IGNORECASE), response=GAZORPAZORP),
 )
 
 def decide_on_response(message):
