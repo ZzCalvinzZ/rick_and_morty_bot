@@ -27,6 +27,14 @@ GAZORPAZORP = (
 	"You're pretty mean to me Gazorpazorpfield, but that takes the cake",
 )
 
+ANTS_IN_MY_EYES = (
+	"I'm ants in my eyes Johnson, here at ants in my eyes Johnson's electronics.",
+	"I mean, there are so many ants in my eyes!",
+	"There are so many TVs, Microwaves, Radios...I think...I'm not a hundred percent sure what we have in stock, because there are so many ants in my eyes!",
+	"I can't see anything! Our prices, I hope aren't too low!",
+	"Also I can't feel anything either, but that's not as catchy.",
+	)
+
 phrases = (
 	text(original=re.compile("(what is|what's) my purpose", flags=re.IGNORECASE), response="You pass butter."),
 	text(original=re.compile("schwifty", flags=re.IGNORECASE), response="Ohh yea, you gotta get schwifty in here."),
@@ -39,6 +47,7 @@ phrases = (
 	text(original=re.compile("(like to|can I) order", flags=re.IGNORECASE), response="I'd like to order one large phone with extra phones please. cell phone, no no no rotary... and payphone on half."),
 	text(original=re.compile("(dunce|dance|dense)days", flags=re.IGNORECASE), response=GAZORPAZORP),
 	text(original=re.compile("(near me|around me|personal space|too close)", flags=re.IGNORECASE), response=PERSONAL_SPACE),
+	text(original=re.compile("(can'?t see|blind|in my eyes)", flags=re.IGNORECASE), response=ANTS_IN_MY_EYES),
 )
 
 def decide_on_response(message):
