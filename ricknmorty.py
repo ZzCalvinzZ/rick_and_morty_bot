@@ -59,6 +59,16 @@ BABY_LEGS = (
 	"I'm comin' baby legs...I'm..regular..legs!",
 )
 
+VINCENT = (
+	"Calling all Jan Michael Vincents. Calling all Jan Michael Vincents.",
+	"We need one Jan Michale Vincent to quadrant C. We need two Jan Michael Vincents to quadrant E.",
+	"In a world where there's eight jan Michael Vincents...and 16 quadrants, there's only enough time for a jan Michael Vincent to make it to a quadrant.",
+	"He can't be in two quadrants at once.",
+	"I need a goddamn Jan Michael Vincent!",
+	"I-I refuse to send the legislation that allows more than eight jan Michael Vincents to a precinct.",
+	"This jan-uary, it's time to Michael down your Vincents. Jan quadrant Vincent 16.",
+)
+
 phrases = (
 	text(original=re.compile("(what is|what's) my purpose", flags=re.IGNORECASE), response="You pass butter."),
 	text(original=re.compile("schwifty", flags=re.IGNORECASE), response="Ohh yea, you gotta get schwifty in here."),
@@ -75,6 +85,7 @@ phrases = (
 	text(original=re.compile("(real|fake) doors?", flags=re.IGNORECASE), response=FAKE_DOORS),
 	text(original=re.compile("(two brothers|in a van|mexican armada|cat monsters|twel.?th gear)", flags=re.IGNORECASE), response=TWO_BROTHERS),
 	text(original=re.compile("(baby|regular|small|short|weird) legs", flags=re.IGNORECASE), response=BABY_LEGS),
+	text(original=re.compile("((jan|michael|mikel|michal|michel|mikal) vincent|quadrant)", flags=re.IGNORECASE), response=VINCENT),
 )
 
 def decide_on_response(message):
