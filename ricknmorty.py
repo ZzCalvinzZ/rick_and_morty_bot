@@ -41,6 +41,16 @@ FAKE_DOORS = (
 	"www.fakedoors.com is our website. Check it out for a lot of really great deals on FAKE DOOORRRRSSSS!",
 	"Hey everybody, so this is my house, just made a sandwich. Still here, still sellin' fake doors.",
 	"We have fake doors, like you wouldn't believe. Don't even hesitate, don't even worry, don't even give it a second thought.",
+)
+
+TWO_BROTHERS = (
+	"And then a meteor hits. And they ran as fast as they could, from giant cat monsters",
+	"Then a giant tornado came, and that's when things got knocked into twelvth gear!",
+	"A Mexican armada shows up. With weapons made from to..tomatoes.",
+	"You better bet your bottom dollar that these two brothers know how to handle business.",
+	"ALIEN INVASION TOMATOE MONSTER MEXICAN ARMADA BROTHERS (WHO ARE JUST REGULAR BROTHERS) RUNNING IN A VAN FROM AN ASTEROID AND ALL SORTS OF THINGS THE MOVIE",
+	"Old women are comin', and they're also in the movie, and they're gonna come and cross...attack...the two brothers",
+	"They have a strong bond, but you don't wanna know about it here. But I'll tell you one thing...the moon, it comes crashing into earth. What do ya do then.",
 	)
 
 phrases = (
@@ -56,7 +66,8 @@ phrases = (
 	text(original=re.compile("(dunce|dance|dense)days", flags=re.IGNORECASE), response=GAZORPAZORP),
 	text(original=re.compile("(near me|around me|personal space|too close)", flags=re.IGNORECASE), response=PERSONAL_SPACE),
 	text(original=re.compile("(can'?t see|blind|in my eyes)", flags=re.IGNORECASE), response=ANTS_IN_MY_EYES),
-	text(original=re.compile("(real|fake) doors?", flags=re.IGNORECASE), response=GAZORPAZORP),
+	text(original=re.compile("(real|fake) doors?", flags=re.IGNORECASE), response=FAKE_DOORS),
+	text(original=re.compile("(two brothers|in a van|mexican armada|cat monsters|twel.?th gear)", flags=re.IGNORECASE), response=TWO_BROTHERS),
 )
 
 def decide_on_response(message):
