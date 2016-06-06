@@ -9,6 +9,9 @@ from collections import namedtuple
 #bot stuff
 text = namedtuple('phrase', 'original response')
 
+def do_regex(regex):
+	return re.compile(regex, flags=re.IGNORECASE)
+
 PERSONAL_SPACE = (
 	"We got a one, personal space",
 	"Two, personal space",
@@ -70,23 +73,23 @@ VINCENT = (
 )
 
 phrases = (
-	text(original=re.compile("(what is|what's) my purpose", flags=re.IGNORECASE), response="You pass butter."),
-	text(original=re.compile("schwifty", flags=re.IGNORECASE), response="Ohh yea, you gotta get schwifty in here."),
-	text(original=re.compile("think (you're|you are|your) better than me", flags=re.IGNORECASE), response="Keep Summer safe."),
-	text(original=re.compile("what'?s going on", flags=re.IGNORECASE), response="I have brokered a peace agreement between the giant spiders and the government."),
-	text(original=re.compile("(ride|take) the stairs", flags=re.IGNORECASE), response="I can take you down there for 25 Schmeck-les"),
-	text(original=re.compile("I don'?t (wanna|want to) shoot (nobody|anybody|noone|anyone)", flags=re.IGNORECASE), response="It's ok, they're just robots Morty, it's ok to shoot them, they're robots!"),
-	text(original=re.compile("robots", flags=re.IGNORECASE), response="It's a figure of speech Morty, they're bureaucrats, I don't respect them. Just keep shooting Morty."),
-	text(original=re.compile("human music", flags=re.IGNORECASE), response="Human music...I like it."),
-	text(original=re.compile("(like to|can I) order", flags=re.IGNORECASE), response="I'd like to order one large phone with extra phones please. cell phone, no no no rotary... and payphone on half."),
-	text(original=re.compile("new machine", flags=re.IGNORECASE), response="It's a new machine. It detects stuff all the way up your butt."),
-	text(original=re.compile("(dunce|dance|dense)days", flags=re.IGNORECASE), response=GAZORPAZORP),
-	text(original=re.compile("(near me|around me|personal space|too close)", flags=re.IGNORECASE), response=PERSONAL_SPACE),
-	text(original=re.compile("(can'?t see|blind|in my eyes)", flags=re.IGNORECASE), response=ANTS_IN_MY_EYES),
-	text(original=re.compile("(real|fake) doors?", flags=re.IGNORECASE), response=FAKE_DOORS),
-	text(original=re.compile("(two brothers|in a van|mexican armada|cat monsters|twel.?th gear)", flags=re.IGNORECASE), response=TWO_BROTHERS),
-	text(original=re.compile("(baby|regular|small|short|weird) legs", flags=re.IGNORECASE), response=BABY_LEGS),
-	text(original=re.compile("((jan|michael|mikel|michal|michel|mikal) vincent|quadrant)", flags=re.IGNORECASE), response=VINCENT),
+	text(original=do_regex("(what is|whats) my purpose"), response="You pass butter."),
+	text(original=do_regex("schwifty"), response="Ohh yea, you gotta get schwifty in here."),
+	text(original=do_regex("think (youre|you are|your) better than me"), response="Keep Summer safe."),
+	text(original=do_regex("whats going on"), response="I have brokered a peace agreement between the giant spiders and the government."),
+	text(original=do_regex("(ride|take) the stairs"), response="I can take you down there for 25 Schmeck-les"),
+	text(original=do_regex("I dont (wanna|want to) shoot (nobody|anybody|noone|anyone)"), response="It's ok, they're just robots Morty, it's ok to shoot them, they're robots!"),
+	text(original=do_regex("robots"), response="It's a figure of speech Morty, they're bureaucrats, I don't respect them. Just keep shooting Morty."),
+	text(original=do_regex("human music"), response="Human music...I like it."),
+	text(original=do_regex("(like to|can I) order"), response="I'd like to order one large phone with extra phones please. cell phone, no no no rotary... and payphone on half."),
+	text(original=do_regex("new machine"), response="It's a new machine. It detects stuff all the way up your butt."),
+	text(original=do_regex("(dunce|dance|dense)days"), response=GAZORPAZORP),
+	text(original=do_regex("(near me|around me|personal space|too close)"), response=PERSONAL_SPACE),
+	text(original=do_regex("(cant see|blind|in my eyes)"), response=ANTS_IN_MY_EYES),
+	text(original=do_regex("(real|fake) doors?"), response=FAKE_DOORS),
+	text(original=do_regex("(two brothers|in a van|mexican armada|cat monsters|twel.?th gear)"), response=TWO_BROTHERS),
+	text(original=do_regex("(baby|regular|small|short|weird) legs"), response=BABY_LEGS),
+	text(original=do_regex("((jan|michael|mikel|michal|michel|mikal) vincent|quadrant)"), response=VINCENT),
 )
 
 def decide_on_response(message):
@@ -94,7 +97,7 @@ def decide_on_response(message):
 	pass in the slack event and get back a response that can then be posted
 	"""
 	for phrase in phrases:
-		if phrase.original.search(message):
+		if phrase.original.search(message.replace('"', '').replace("'", '')):
 			if isinstance(phrase.response, tuple):
 				return (random.choice(phrase.response))
 			else:
