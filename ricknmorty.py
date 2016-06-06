@@ -22,7 +22,7 @@ PERSONAL_SPACE = (
 	"You know, I take personal space pretty seriously, up to the point that I'm not even interested in having this...skin on my personal space.",
 )
 GAZORPAZORP = (
-	"You dumb, stupid, weak, pathetic, white...uh...guilt...white guilt, milktoast...",
+	"You dumb, stupid, weak, pathetic, white...uh...guilt...white guilt, milquetoast...",
 	"Give me my enchiladas",
 	"You're pretty mean to me Gazorpazorpfield, but that takes the cake",
 )
