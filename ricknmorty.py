@@ -61,7 +61,7 @@ BABY_LEGS = (
 
 VINCENT = (
 	"Calling all Jan Michael Vincents. Calling all Jan Michael Vincents.",
-	"We need one Jan Michale Vincent to quadrant C. We need two Jan Michael Vincents to quadrant E.",
+	"We need one Jan Michael Vincent to quadrant C. We need two Jan Michael Vincents to quadrant E.",
 	"In a world where there's eight jan Michael Vincents...and 16 quadrants, there's only enough time for a jan Michael Vincent to make it to a quadrant.",
 	"He can't be in two quadrants at once.",
 	"I need a goddamn Jan Michael Vincent!",
@@ -79,6 +79,7 @@ phrases = (
 	text(original=re.compile("robots", flags=re.IGNORECASE), response="It's a figure of speech Morty, they're bureaucrats, I don't respect them. Just keep shooting Morty."),
 	text(original=re.compile("human music", flags=re.IGNORECASE), response="Human music...I like it."),
 	text(original=re.compile("(like to|can I) order", flags=re.IGNORECASE), response="I'd like to order one large phone with extra phones please. cell phone, no no no rotary... and payphone on half."),
+	text(original=re.compile("new machine", flags=re.IGNORECASE), response="It's a new machine. It detects stuff all the way up your butt."),
 	text(original=re.compile("(dunce|dance|dense)days", flags=re.IGNORECASE), response=GAZORPAZORP),
 	text(original=re.compile("(near me|around me|personal space|too close)", flags=re.IGNORECASE), response=PERSONAL_SPACE),
 	text(original=re.compile("(can'?t see|blind|in my eyes)", flags=re.IGNORECASE), response=ANTS_IN_MY_EYES),
