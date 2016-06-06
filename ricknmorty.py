@@ -83,7 +83,7 @@ phrases = (
 	text(original=do_regex("human music"), response="Human music...I like it."),
 	text(original=do_regex("(like to|can I) order"), response="I'd like to order one large phone with extra phones please. cell phone, no no no rotary... and payphone on half."),
 	text(original=do_regex("new machine"), response="It's a new machine. It detects stuff all the way up your butt."),
-	text(original=do_regex("(dunce|dance|dense)days"), response=GAZORPAZORP),
+	text(original=do_regex("monday"), response=GAZORPAZORP),
 	text(original=do_regex("(near me|around me|personal space|too close)"), response=PERSONAL_SPACE),
 	text(original=do_regex("(cant see|blind|in my eyes)"), response=ANTS_IN_MY_EYES),
 	text(original=do_regex("(real|fake) doors?"), response=FAKE_DOORS),
