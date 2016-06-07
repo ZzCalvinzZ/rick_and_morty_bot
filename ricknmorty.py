@@ -72,6 +72,13 @@ VINCENT = (
 	"This jan-uary, it's time to Michael down your Vincents. Jan quadrant Vincent 16.",
 )
 
+MEESEEKS = (
+	"I'm Mr. Meeseeks, look at me!",
+	"Caaaannnnn dooooooo.",
+	"Is he keeping his shoulders square? Ohhhhh he's tryyiingg.",
+	"I have to fulfill my purpose, so I can go away!",
+)
+
 phrases = (
 	text(original=do_regex("(what is|whats) my purpose"), response="You pass butter."),
 	text(original=do_regex("schwifty"), response="Ohh yea, you gotta get schwifty in here."),
@@ -90,6 +97,7 @@ phrases = (
 	text(original=do_regex("(two brothers|in a van|mexican armada|cat monsters|twel.?th gear)"), response=TWO_BROTHERS),
 	text(original=do_regex("(baby|regular|small|short|weird) legs"), response=BABY_LEGS),
 	text(original=do_regex("((jan|michael|mikel|michal|michel|mikal) vincent|quadrant)"), response=VINCENT),
+	text(original=do_regex("(meseeks|meeseeks|look at me)"), response=MEESEEKS),
 )
 
 def decide_on_response(message):
