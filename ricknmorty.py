@@ -24,6 +24,7 @@ PERSONAL_SPACE = (
 	"Nine, PERSONAL SPACE",
 	"You know, I take personal space pretty seriously, up to the point that I'm not even interested in having this...skin on my personal space.",
 )
+
 GAZORPAZORP = (
 	"You dumb, stupid, weak, pathetic, white...uh...guilt...white guilt, milquetoast...",
 	"Give me my enchiladas",
@@ -118,7 +119,7 @@ if __name__ == "__main__":
 	#get slack token from yaml file
 	current_path = os.path.dirname(os.path.realpath(__file__))
 
-	with open(current_path + '/token.yaml', 'r') as stream:
+	with open(current_path + '/token.yaml') as stream:
 		token = yaml.load(stream)['token']
 
 	#slack stuff
@@ -130,7 +131,7 @@ if __name__ == "__main__":
 
 			for item in event:
 
-				if item.get('type', None) == 'message' and item.get('user', None) != 'rick_and_morty_bot':
+				if item.get('type') == 'message' and item.get('user') != 'rick_and_morty_bot':
 					message = item.get('text', '')
 					channel = item.get('channel', '')
 
